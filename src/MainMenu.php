@@ -6,6 +6,7 @@ use Composer\InstalledVersions;
 use PhpSchool\CliMenu\Builder\CliMenuBuilder;
 use PhpSchool\CliMenu\Exception\InvalidTerminalException;
 use Simonorono\Devlog\Actions\InputLog;
+use Simonorono\Devlog\Data\EntryType;
 
 class MainMenu
 {
@@ -23,7 +24,8 @@ class MainMenu
     {
         (new CliMenuBuilder)
             ->setTitle($this->getTitle())
-            ->addItem('Enter log', (new InputLog))
+            ->addItem('Log', (new InputLog(EntryType::Log)))
+            ->addItem('Meeting', (new InputLog(EntryType::Meeting)))
             ->build()
             ->open();
     }

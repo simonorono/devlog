@@ -19,7 +19,8 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^8.2",
-    "php-school/cli-menu": "^4.3"
+    "php-school/cli-menu": "^4.3",
+    "nesbot/carbon": "^2.69"
   },
   "require-dev": {
     "laravel/pint": "^1.11",
