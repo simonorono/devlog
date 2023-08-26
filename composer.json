@@ -1,6 +1,7 @@
 {
   "name": "simonorono/devlog",
   "description": "A command line utility to keep track of my development work during the day",
+  "version": "0.0.1",
   "type": "project",
   "license": "Apache-2.0",
   "autoload": {
