@@ -17,7 +17,8 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": "^8.2"
+    "php": "^8.2",
+    "php-school/cli-menu": "^4.3"
   },
   "require-dev": {
     "laravel/pint": "^1.11",
