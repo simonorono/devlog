@@ -1,27 +1,27 @@
 {
-    "name": "simonorono/devlog",
-    "description": "A command line utility to keep track of my development work during the day",
-    "type": "project",
-    "license": "Apache-2.0",
-    "autoload": {
-        "psr-4": {
-            "Simonorono\\Devlog\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Simón Oroño",
-            "email": "simonorono@protonmail.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "php": "^8.2"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.11"
-    },
-    "scripts": {
-        "format": "pint"
+  "name": "simonorono/devlog",
+  "description": "A command line utility to keep track of my development work during the day",
+  "type": "project",
+  "license": "Apache-2.0",
+  "autoload": {
+    "psr-4": {
+      "Simonorono\\Devlog\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Simón Oroño",
+      "email": "simonorono@protonmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.11"
+  },
+  "scripts": {
+    "format": "pint"
+  }
 }
