@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use PhpSchool\CliMenu\CliMenu;
 use Simonorono\Devlog\Data\Entry;
 use Simonorono\Devlog\Data\EntryType;
+use Simonorono\Devlog\Storage\FileStorage;
 
 class InputLog extends AbstractAction
 {
@@ -37,7 +38,8 @@ class InputLog extends AbstractAction
         }
 
         $entry = new Entry(Carbon::now(), $this->type, $text);
-        // TODO: store the entry
+
+        (new FileStorage())->addEntry($entry);
 
         $flash = $menu->flash(self::SUCCESS_MESSAGE);
         $flash->display();
