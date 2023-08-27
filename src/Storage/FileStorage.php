@@ -72,7 +72,11 @@ class FileStorage
     {
         $textContent = file_get_contents($this->getFilename());
 
-        return unserialize($textContent);
+        $entries = unserialize($textContent);
+
+        usort($entries, fn (Entry $e1, Entry $e2) => $e1->compare($e2));
+
+        return $entries;
     }
 
     public function deleteEntry(Entry $entry): void

@@ -12,4 +12,9 @@ class Entry
         public string $content,
     ) {
     }
+
+    public function compare(Entry $another): int
+    {
+        return $this->timestamp->isBefore($another->timestamp) ? -1 : 1;
+    }
 }
