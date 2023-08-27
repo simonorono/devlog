@@ -38,9 +38,9 @@ class InputLog extends AbstractAction
             return;
         }
 
-        $entry = new Entry(Carbon::now(), $this->type, $text);
-
-        $this->storage->addEntry($entry);
+        $this->storage->addEntry(
+            new Entry(Carbon::now(), $this->type, $text)
+        );
 
         $flash = $menu->flash(self::SUCCESS_MESSAGE);
         $flash->display();
