@@ -19,7 +19,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^8.2",
-    "php-school/cli-menu": "^4.3",
+    "php-school/cli-menu": "dev-master#835c28ef599f237eeb0a8920c1a6a471cedc139a",
     "nesbot/carbon": "^2.69"
   },
   "require-dev": {

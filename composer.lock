@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ef91e684bb7a610dbb9bb2dbe3b257d",
+    "content-hash": "53920e46b909ee3643f5ca11eb6d2217",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1626,16 +1626,16 @@
         },
         {
             "name": "php-school/cli-menu",
-            "version": "4.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-school/cli-menu.git",
-                "reference": "bad5e0177f2b3ada6dc14eee4011fee4001b7679"
+                "reference": "835c28ef599f237eeb0a8920c1a6a471cedc139a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-school/cli-menu/zipball/bad5e0177f2b3ada6dc14eee4011fee4001b7679",
-                "reference": "bad5e0177f2b3ada6dc14eee4011fee4001b7679",
+                "url": "https://api.github.com/repos/php-school/cli-menu/zipball/835c28ef599f237eeb0a8920c1a6a471cedc139a",
+                "reference": "835c28ef599f237eeb0a8920c1a6a471cedc139a",
                 "shasum": ""
             },
             "require": {
@@ -1646,10 +1646,11 @@
                 "php-school/terminal": "^0.2.1"
             },
             "require-dev": {
-                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan": "^1.2.0",
                 "phpunit/phpunit": "^8.0 | ^9.0",
                 "squizlabs/php_codesniffer": "^3.2"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
@@ -1684,9 +1685,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-school/cli-menu/issues",
-                "source": "https://github.com/php-school/cli-menu/tree/4.3.0"
+                "source": "https://github.com/php-school/cli-menu/tree/master"
             },
-            "time": "2021-12-16T09:40:06+00:00"
+            "time": "2023-08-27T13:43:29+00:00"
         },
         {
             "name": "php-school/terminal",
@@ -5982,7 +5983,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "php-school/cli-menu": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
