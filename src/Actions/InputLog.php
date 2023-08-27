@@ -16,8 +16,9 @@ class InputLog extends AbstractAction
 
     const SUCCESS_MESSAGE = 'Entry logged';
 
-    public function __construct(protected EntryType $type)
+    public function __construct(FileStorage $storage, protected EntryType $type)
     {
+        parent::__construct($storage);
     }
 
     private static function validateInput(string $text): bool
@@ -39,7 +40,7 @@ class InputLog extends AbstractAction
 
         $entry = new Entry(Carbon::now(), $this->type, $text);
 
-        (new FileStorage())->addEntry($entry);
+        $this->storage->addEntry($entry);
 
         $flash = $menu->flash(self::SUCCESS_MESSAGE);
         $flash->display();

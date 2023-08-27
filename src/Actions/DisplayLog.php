@@ -3,7 +3,6 @@
 namespace Simonorono\Devlog\Actions;
 
 use PhpSchool\CliMenu\CliMenu;
-use Simonorono\Devlog\Storage\FileStorage;
 
 class DisplayLog extends AbstractAction
 {
@@ -11,9 +10,7 @@ class DisplayLog extends AbstractAction
     {
         $menu->redraw(true);
 
-        $fileStorage = new FileStorage();
-
-        $entries = $fileStorage->allEntries();
+        $entries = $this->storage->allEntries();
 
         $text = implode(PHP_EOL.PHP_EOL, array_map(fn($e) => (string)$e,$entries));
 

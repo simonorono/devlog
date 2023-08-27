@@ -8,6 +8,7 @@ use PhpSchool\CliMenu\Exception\InvalidTerminalException;
 use Simonorono\Devlog\Actions\DisplayLog;
 use Simonorono\Devlog\Actions\InputLog;
 use Simonorono\Devlog\Data\EntryType;
+use Simonorono\Devlog\Storage\FileStorage;
 
 class MainMenu
 {
@@ -23,11 +24,13 @@ class MainMenu
      */
     public function open(): void
     {
+        $storage = new FileStorage();
+
         (new CliMenuBuilder)
             ->setTitle($this->getTitle())
-            ->addItem('Log', (new InputLog(EntryType::Log)))
-            ->addItem('Meeting', (new InputLog(EntryType::Meeting)))
-            ->addItem('Show log', (new DisplayLog()))
+            ->addItem('Log', (new InputLog($storage, EntryType::Log)))
+            ->addItem('Meeting', (new InputLog($storage, EntryType::Meeting)))
+            ->addItem('Show log', (new DisplayLog($storage)))
             ->build()
             ->open();
     }
