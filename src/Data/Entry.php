@@ -17,4 +17,13 @@ class Entry
     {
         return $this->timestamp->isBefore($another->timestamp) ? -1 : 1;
     }
+
+    public function __toString(): string
+    {
+        $ts = (clone $this->timestamp);
+        $ts->setTimezone('America/Caracas');
+        $ts->toTimeString();
+
+        return "[{$ts->toTimeString()}] $this->content";
+    }
 }
