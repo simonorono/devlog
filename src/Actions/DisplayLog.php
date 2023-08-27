@@ -2,18 +2,27 @@
 
 namespace Simonorono\Devlog\Actions;
 
-use PhpSchool\CliMenu\CliMenu;
+use PhpSchool\CliMenu\Builder\CliMenuBuilder;
+use Simonorono\Devlog\Data\Entry;
 
 class DisplayLog extends AbstractAction
 {
-    public function __invoke(CliMenu $menu): void
+    public function __invoke(CliMenuBuilder $builder): void
     {
-        $menu->redraw(true);
+        $builder->setTitle('Log');
 
-        $entries = $this->storage->allEntries();
+        $currentDate = null;
 
-        $text = implode(PHP_EOL.PHP_EOL, array_map(fn ($e) => (string) $e, $entries));
+        foreach ($this->storage->allEntries() as $entry) {
+            /** @var Entry $entry */
+            $date = $entry->timestamp->toDateString();
 
-        echo $text;
+            if ($currentDate != $date) {
+                $currentDate = $date;
+                $builder->addStaticItem($currentDate);
+            }
+
+            $builder->addStaticItem('  '.$entry);
+        }
     }
 }
