@@ -12,7 +12,7 @@ class DisplayLog extends AbstractAction
 
         $entries = $this->storage->allEntries();
 
-        $text = implode(PHP_EOL.PHP_EOL, array_map(fn($e) => (string)$e,$entries));
+        $text = implode(PHP_EOL.PHP_EOL, array_map(fn ($e) => (string) $e, $entries));
 
         echo $text;
     }
