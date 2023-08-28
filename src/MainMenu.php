@@ -30,7 +30,7 @@ class MainMenu
             ->setTitle($this->getTitle())
             ->addItem('Log', (new InputLog($storage, EntryType::Log)))
             ->addItem('Meeting', (new InputLog($storage, EntryType::Meeting)))
-            ->addSubMenu('Show log', (new DisplayLog($storage)))
+            ->addItem('Show log', (new DisplayLog($storage)))
             ->build()
             ->open();
     }

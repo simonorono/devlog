@@ -3,13 +3,19 @@
 namespace Simonorono\Devlog\Actions;
 
 use PhpSchool\CliMenu\Builder\CliMenuBuilder;
+use PhpSchool\CliMenu\CliMenu;
+use PhpSchool\CliMenu\Exception\InvalidTerminalException;
 use Simonorono\Devlog\Data\Entry;
 
 class DisplayLog extends AbstractAction
 {
-    public function __invoke(CliMenuBuilder $builder): void
+    /**
+     * @throws InvalidTerminalException
+     */
+    public function __invoke(CliMenu $menu): void
     {
-        $builder->setTitle('Log');
+        $builder = (new CliMenuBuilder())
+            ->setTitle('Log');
 
         $currentDate = null;
 
@@ -19,10 +25,15 @@ class DisplayLog extends AbstractAction
 
             if ($currentDate != $date) {
                 $currentDate = $date;
-                $builder->addStaticItem($currentDate);
+
+                $builder->addStaticItem("[$date]");
             }
 
-            $builder->addStaticItem('  '.$entry);
+            $builder->addStaticItem("  $entry");
         }
+
+        $builder->build()->open();
+
+        $menu->redraw(true);
     }
 }
