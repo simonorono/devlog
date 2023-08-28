@@ -40,7 +40,7 @@ class DisplayLog extends AbstractAction
             }
         }
 
-        $builder->build()->open();
+        $builder->setMarginAuto()->build()->open();
 
         $menu->redraw(true);
     }

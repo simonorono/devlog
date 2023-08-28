@@ -33,6 +33,7 @@ class MainMenu
             ->addItem('Meeting', (new InputLog($storage, EntryType::Meeting)))
             ->addItem('Show log', (new DisplayLog($storage)))
             ->addItem('Bulk Delete', (new BulkDelete($storage)))
+            ->setMarginAuto()
             ->build()
             ->open();
     }
