@@ -24,8 +24,7 @@
   },
   "require-dev": {
     "laravel/pint": "^1.11",
-    "pestphp/pest": "^2.16",
-    "humbug/box": "^4.3"
+    "pestphp/pest": "^2.16"
   },
   "scripts": {
     "build": "box compile",
