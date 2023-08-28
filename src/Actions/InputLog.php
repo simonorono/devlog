@@ -23,7 +23,7 @@ class InputLog extends AbstractAction
 
     private static function validateInput(string $text): bool
     {
-        return strlen($text) > self::MIN_STRLEN;
+        return strlen($text) >= self::MIN_STRLEN;
     }
 
     public function __invoke(CliMenu $menu): void
