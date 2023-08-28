@@ -11,5 +11,5 @@ abstract class AbstractAction
     {
     }
 
-    abstract public function __invoke(CliMenu $menu);
+    abstract public function __invoke(CliMenu $menu): void;
 }

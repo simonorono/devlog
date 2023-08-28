@@ -8,7 +8,7 @@ use Simonorono\Devlog\Data\Entry;
 
 class BulkDelete extends AbstractAction
 {
-    public function __invoke(CliMenu $menu)
+    public function __invoke(CliMenu $menu): void
     {
         $daysToRetain = (int) $menu->askNumber()
             ->setPromptText('How many days to retain?')
