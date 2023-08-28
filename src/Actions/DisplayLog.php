@@ -29,7 +29,15 @@ class DisplayLog extends AbstractAction
                 $builder->addStaticItem("[$date]");
             }
 
+            if ($entry->isMeeting()) {
+                $builder->addLineBreak('');
+            }
+
             $builder->addStaticItem("  $entry");
+
+            if ($entry->isMeeting()) {
+                $builder->addLineBreak('');
+            }
         }
 
         $builder->build()->open();

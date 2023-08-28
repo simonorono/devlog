@@ -18,12 +18,19 @@ class Entry
         return $this->timestamp->isAfter($another->timestamp) ? -1 : 1;
     }
 
+    public function isMeeting(): bool
+    {
+        return $this->type == EntryType::Meeting;
+    }
+
     public function __toString(): string
     {
-        $ts = (clone $this->timestamp);
-        $ts->setTimezone('America/Caracas');
-        $ts->toTimeString();
+        $str = "[{$this->timestamp->toTimeString()}]";
 
-        return "[{$ts->toTimeString()}] $this->content";
+        if ($this->isMeeting()) {
+            $str .= '[MEETING]';
+        }
+
+        return $str." $this->content";
     }
 }
