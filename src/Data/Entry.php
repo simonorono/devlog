@@ -15,7 +15,7 @@ class Entry
 
     public function compare(Entry $another): int
     {
-        return $this->timestamp->isBefore($another->timestamp) ? -1 : 1;
+        return $this->timestamp->isAfter($another->timestamp) ? -1 : 1;
     }
 
     public function __toString(): string
