@@ -5,6 +5,7 @@ namespace Simonorono\Devlog;
 use Composer\InstalledVersions;
 use PhpSchool\CliMenu\Builder\CliMenuBuilder;
 use PhpSchool\CliMenu\Exception\InvalidTerminalException;
+use Simonorono\Devlog\Actions\BulkDelete;
 use Simonorono\Devlog\Actions\DisplayLog;
 use Simonorono\Devlog\Actions\InputLog;
 use Simonorono\Devlog\Data\EntryType;
@@ -31,6 +32,7 @@ class MainMenu
             ->addItem('Log', (new InputLog($storage, EntryType::Log)))
             ->addItem('Meeting', (new InputLog($storage, EntryType::Meeting)))
             ->addItem('Show log', (new DisplayLog($storage)))
+            ->addItem('Bulk Delete', (new BulkDelete($storage)))
             ->build()
             ->open();
     }
